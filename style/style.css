@@ -1,0 +1,149 @@
+:root {
+    --body-background: whitesmoke;
+    --fonce: #0c0b0a;
+    --medium: #332e27;
+    --normal: #3f465e;
+    --light: #c6ac8f;
+    --bright: #eae0d5;
+}
+
+/*************** NAVBAR ***************/
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Ubuntu';
+    background-color: var(--body-background);
+    color: var(--body-text);
+}
+main {
+    flex-grow: 1;
+}
+section {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.box-shadow {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+/* TABLET */
+
+@media only screen and (max-width: 1200px) {
+    section {
+        width: 700px;
+    }
+}
+
+/* PHONES */
+
+@media only screen and (max-width: 800px) { 
+    section {
+        width: 100%;
+    }
+}
+/*************** NAVBAR ***************/
+
+nav {
+    padding: 20px 20%;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    font-size: 24px;
+    top: 0;
+    color: var(--bright);
+    background-color: var(--medium);
+}
+nav .nav-head {
+} 
+nav .nav-items {
+    display: flex;
+}
+nav .nav-item {
+    padding: 0 5px;
+}
+
+/* TABLET */
+
+@media only screen and (max-width: 1200px) {
+    nav {
+        padding: 20px 10%;
+    }
+}
+
+/* PHONES */
+
+@media only screen and (max-width: 800px) { 
+    nav {
+        padding: 15px 15px;
+    }
+}
+/*************** MAIN ***************/
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 30px auto;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.15);
+}
+table, th, td {
+    border: solid 1px var(--table-border);
+}
+th, td {
+    padding: 15px;
+}
+td a {
+    color: var(--table-icon-color);
+    text-decoration: underline;
+    color: var(--link-color);
+}
+
+form {
+    width: 90%;
+    padding: 10px;
+    margin: 30px auto;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.15);
+    display: flex;
+    background-color: var(--form-background);
+    flex-direction: column;
+}
+
+input {
+    font-family: unset;
+    padding: 5px;
+    margin: 5px;
+    border: solid 1px var(--table-border);
+}
+
+/* TABLET */
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* PHONES */
+
+@media only screen and (max-width: 800px) { 
+}
+/*************** FOOTER ***************/
+
+footer {
+    background-color: var(--fonce);
+    color: var(--normal);
+    padding: 20px;
+}
+
+/* TABLET */
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* PHONES */
+
+@media only screen and (max-width: 800px) { 
+}
