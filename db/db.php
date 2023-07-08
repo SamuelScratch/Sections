@@ -17,24 +17,12 @@ class SqliteManager { // Classe permettant de faire des opérations sur la base 
 
     // Méthodes
     
-    public function GetAllFromTable($dtoTable)
+    public function Execute($request)
     {
-        $request = "SELECT * FROM " . $dtoTable;
         $statement = $this->db->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();
         return $result;
-    }
-    public function GetById($dtoTable, $id)
-    {
-        $request = "SELECT * FROM $dtoTable WHERE id = $id";
-        $statement = $this->db->prepare($request);
-        $statement->execute();
-        $result = $statement->fetchAll();
-        return $result;
-    }
-    public function Save($dtoTable, $data){
-
     }
 }
 ?>

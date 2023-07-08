@@ -10,6 +10,9 @@
         <a href="/users" class="nav-item">
             <span class="material-icons">apps</span>
         </a>
+        <a href="/users" class="nav-item">
+            <span class="material-icons">add</span>
+        </a>
         <a href="#" class="nav-item">
             <span class="material-icons">person</span>
         </a>

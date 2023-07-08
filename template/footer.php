@@ -1,3 +1,3 @@
 <footer>
-    @MVC website
+    @Sections - 2023
 </footer>

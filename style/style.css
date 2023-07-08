@@ -1,10 +1,10 @@
 :root {
     --body-background: whitesmoke;
-    --fonce: #0c0b0a;
-    --medium: #332e27;
-    --normal: #3f465e;
-    --light: #c6ac8f;
-    --bright: #eae0d5;
+    --fonce: #0d1321;
+    --medium: #1d2d44;
+    --normal: #3e5c76;
+    --light: #748cab;
+    --bright: #d8eaf0;
 }
 
 /*************** NAVBAR ***************/
@@ -17,9 +17,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    font-family: 'Ubuntu';
-    background-color: var(--body-background);
-    color: var(--body-text);
+    font-family: 'Montserrat';
+    background-color: var(--fonce);
+    color: var(--bright);
 }
 main {
     flex-grow: 1;
@@ -61,11 +61,17 @@ nav {
 }
 nav .nav-head {
 } 
+nav .nav-head:hover {
+    color: white ;
+}
 nav .nav-items {
     display: flex;
 }
 nav .nav-item {
     padding: 0 5px;
+}
+nav .nav-item:hover {
+    color: var(--light) ;
 }
 
 /* TABLET */
@@ -84,22 +90,12 @@ nav .nav-item {
     }
 }
 /*************** MAIN ***************/
-table {
-    border-collapse: collapse;
-    width: 90%;
-    margin: 30px auto;
-    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.15);
+h1 {
+    font-size: 2rem;
+    margin: 20px;
 }
-table, th, td {
-    border: solid 1px var(--table-border);
-}
-th, td {
-    padding: 15px;
-}
-td a {
-    color: var(--table-icon-color);
-    text-decoration: underline;
-    color: var(--link-color);
+hr {
+    border: solid 1px var(--light);
 }
 
 form {
@@ -135,6 +131,7 @@ footer {
     background-color: var(--fonce);
     color: var(--normal);
     padding: 20px;
+    border-top: solid 1px var(--medium);
 }
 
 /* TABLET */

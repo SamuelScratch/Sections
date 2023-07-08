@@ -50,6 +50,7 @@ table {
 a {
 	color: unset;
 	text-decoration: unset;
+	transition: 0.3s;
 }
 
 .material-icons {
