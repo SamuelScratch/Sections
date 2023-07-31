@@ -4,7 +4,7 @@ class SqliteManager { // Classe permettant de faire des opérations sur la base 
 
     // Propriétés
 
-    private PDO $db;
+    public PDO $db;
 
     // Constructeur
 
@@ -17,12 +17,64 @@ class SqliteManager { // Classe permettant de faire des opérations sur la base 
 
     // Méthodes
     
-    public function Execute($request)
+    public function Execute($request, $parametre = array()) // Execute simplement la requete passé en paramètre
     {
         $statement = $this->db->prepare($request);
-        $statement->execute();
+        $statement->execute($parametre);
         $result = $statement->fetchAll();
         return $result;
+    }
+
+    public function GetIdOf($table, $field, $val) // Vérifie si une élément existe dans la base de données en fonction de la table, du champ avec lequel on veut repérer l'élément et la valeur de ce champ
+    {
+        $result = $this->Execute("SELECT id FROM $table WHERE $field = :val", array("val" => $val));
+        if (count($result) > 0){
+            return $result[0]["id"];
+        }
+        return false;
+    }
+
+    public function TestConnexion($table, $name, $password){
+        try {
+            $result = $this->Execute("SELECT name FROM $table WHERE name = :name", array("name" => $name));
+            if(count($result) == 1){
+                if ($this->UserPasswordCheck($table, $name, $password)){
+                    return true;
+                }
+            }
+        }
+        catch(Exception $e) {
+            return false;
+        }
+        return false;
+    }
+
+    public function Inscription($table, $name, $mail, $password){
+        try {
+            $result = $this->Execute("INSERT INTO $table (name, password, mail) VALUES (:name, :password, :mail)", array("name" => $name, "password" => password_hash($password, PASSWORD_DEFAULT), "mail" => $mail));
+            $result = $this->Execute("INSERT INTO profile (user_id) VALUES (:id)", array("id" => $this->db->lastInsertId()));
+            if ($this->db->lastInsertId() != 0){
+                return true;
+            }
+        }
+        catch(Exception $e) {
+            return false;
+        }
+        return false;
+    }
+
+    private function UserPasswordCheck($table, $name, $password){
+        try {
+            $request = "SELECT password FROM $table WHERE name = :name";
+            $result = $this->Execute($request, array("name" => $name));
+            if(password_verify($password, $result[0]["password"])){
+                return true;
+            }
+        }
+        catch(Exception $e) {
+            return false;
+        }
+        return false;
     }
 }
 ?>

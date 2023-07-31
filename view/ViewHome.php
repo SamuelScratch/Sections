@@ -8,8 +8,9 @@
 
     <main>
         <section>
-            <h1>Pour vous</h1>
-            <hr>
+            <header>
+                <h1>Derniers Posts</h1>
+            </header>
         </section>
     </main>
 

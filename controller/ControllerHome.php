@@ -5,3 +5,4 @@ switch ($_SERVER['REQUEST_METHOD']){
         include "./view/ViewHome.php";
         break;
 }
+?>

@@ -112,11 +112,15 @@ class Route {
         exit();
     }
 }
-
+include_once "./db/db.php";
 $route = new Route();
 
 $route->add("/","./controller/ControllerHome.php");
-$route->add("/users","./controller/ControllerUsers.php");
-$route->notFound("./controller/ControllerHome.php");
+$route->add("/profile","./controller/ControllerProfile.php");
+$route->add("/profile/{id}","./controller/ControllerProfile.php");
+$route->add("/edit/profile","./controller/ControllerProfileEdit.php");
+$route->add("/login","./controller/ControllerLogin.php");
+$route->add("/register","./controller/ControllerRegister.php");
+$route->notFound("./controller/Controller404.php");
 
 ?>

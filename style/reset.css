@@ -51,9 +51,13 @@ a {
 	color: unset;
 	text-decoration: unset;
 	transition: 0.3s;
+	cursor: pointer;
 }
-
-.material-icons {
+input[type="submit"], button {
+    cursor: pointer;
+}
+.material-icons, .material-icons-outlined {
+	font-size: unset;
 	font-size: unset;
 	vertical-align: bottom;
 }
