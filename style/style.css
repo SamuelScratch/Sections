@@ -167,7 +167,10 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background-color: var(--normal);
 }
-
+.profile-name {
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .profile-image {
     height: 60px;
     width: 60px;
@@ -176,6 +179,28 @@ input[type="submit"]:hover{
 .profile-image img {
     height: 60px;
     width: 60px;
+}
+
+.publications {
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+.publication {
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px var(--medium);
+    padding: 15px;
+    gap: 10px;
+}
+.publication-user {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.publication-image {
+    height: 20px;
+    width: 20px;
+    border: solid 1px var(--medium);
 }
 
 /* TABLET */

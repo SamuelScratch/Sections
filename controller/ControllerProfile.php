@@ -2,6 +2,7 @@
 include_once "./model/DtoUser.php";
 include_once "./model/DtoProfile.php";
 include_once "./lib/LibSections.php";
+include_once "./controller/ControllerPublication.php";
 session_start();
 
 if (isset($params["id"])){
@@ -16,6 +17,7 @@ else {
 
 $user = getUser($id);
 $profile = getProfile($id);
+$feed = getUserPublications($id);
 
 include_once "./view/ViewProfile.php";
 ?>

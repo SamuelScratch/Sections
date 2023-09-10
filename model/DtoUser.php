@@ -39,5 +39,11 @@ class DtoUser extends Dto
         }
         return $lstUsers;
     }
+    // Create a static function to get a user in the database from its id. The function will use sqliteManager class and DtoUser class.
+    static function getUser($id){
+        $db = new SqliteManager("sections");
+        $result = $db->Execute("SELECT * FROM user WHERE id = :id", array("id" => $id));
+        return new DtoUser($result[0]["id"], $result[0]["name"], $result[0]["password"], $result[0]["mail"]);
+    }
 
 }

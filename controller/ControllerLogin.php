@@ -17,9 +17,11 @@ switch ($_SERVER['REQUEST_METHOD']){
                 session_start();
                 $id = $db->GetIdOf(DtoUser::$tableName, "name", $_POST["name"]);
                 $_SESSION["id"] = $id;
-                header('Location: /', true, 303);
+                header('Location: /profile', true, 303);
             }
             else {
+                session_start();
+                session_destroy();
                 $msgErr = "Erreur d'identifiant ou de mot de passe";
                 include_once "./view/ViewLogin.php";
             }
